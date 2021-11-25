@@ -1,3 +1,9 @@
 .venv
 */.ipynb_checkpoints
 .DS_Store
+
+/data/models/*
+!/data/models/.gitkeep
+
+# maybe this should not become part of official repo?
+*.ipynb
