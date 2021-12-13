@@ -1,0 +1,38 @@
+name: model-training
+
+on:
+    push:
+        branches: [main]
+
+    pull_request:
+
+jobs:
+
+  set-up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Intstall Python dependencies
+        run: pip install -r requirements.txt
+
+  model-training:
+    steps:
+      - name: Create data directory
+        run: mkdir -p data/models
+
+      - name: Train Model
+        run: python3 src/train.py
+
+      - name: Save model as GitHub artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: trained_model.sav
+          path: data/models
+          if-no-files-found: 'warn'
