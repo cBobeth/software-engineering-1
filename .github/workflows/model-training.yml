@@ -23,6 +23,7 @@ jobs:
         run: pip install -r requirements.txt
 
   model-training:
+    runs-on: ubuntu-latest
     steps:
       - name: Create data directory
         run: mkdir -p data/models
