@@ -22,7 +22,7 @@ jobs:
       - name: Intstall Python dependencies
         run: pip install -r requirements.txt
 
-     - name: Create data directory
+      - name: Create data directory
         run: mkdir -p data/models
 
       - name: Train Model
