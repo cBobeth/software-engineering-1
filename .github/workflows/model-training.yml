@@ -3,7 +3,7 @@ name: model-training
 on:
     #push:
     #  branches: [main]
-    
+
     pull_request:
       types: [opened, syncronize, reopened]
 
@@ -32,6 +32,7 @@ jobs:
       - name: Save model as GitHub artifact
         uses: actions/upload-artifact@v2
         with:
-          name: trained_model.sav
-          path: data/models
+          name: trained_model.sav # This should be the name under which the artifact appears in GitHub
+                                  #  which could be the real name too
+          path: data/models/trained_model.sav  # This is the path + name, but could leave away also the file name
           if-no-files-found: 'warn'
