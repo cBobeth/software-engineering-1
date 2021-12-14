@@ -1,10 +1,11 @@
 name: model-training
 
 on:
-    push:
-        branches: [main]
-
+    #push:
+    #  branches: [main]
+    
     pull_request:
+      types: [opened, syncronize, reopened]
 
 jobs:
 
