@@ -7,3 +7,5 @@
 
 # maybe this should not become part of official repo?
 *.ipynb
+
+__pycache__
