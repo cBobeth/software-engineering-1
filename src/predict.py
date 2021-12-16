@@ -14,7 +14,7 @@ df = pd.read_csv(project_path + data_file_name, sep=';')
 
 # split data in training and test data
 data_array = df.values
-X = data_array[:, 1:5]
+X = data_array[:, 1:6]
 Y = data_array[:, 0]
 
 test_size = 0.33
