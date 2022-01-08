@@ -67,7 +67,7 @@ def model_predict():
     print(f"Request with zylinder={zylinder}, ps={ps}, gewicht={gewicht}, "
           f"beschleuningung={beschleunigung}, baujahr={baujahr}")
     # model prediction for baujahr
-    prediction_data = [zylinder, ps, gewicht, beschleunigung]
+    prediction_data = [zylinder, ps, gewicht, beschleunigung, baujahr]
     prediction = trained_model.predict([prediction_data])
     # JSON Response
     return {
