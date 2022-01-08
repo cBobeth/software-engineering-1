@@ -28,4 +28,7 @@ model = LinearRegression()
 model.fit(X_train, Y_train)
 
 # save the model to disk
-pickle.dump(model, open(project_path + model_path + model_file_name, 'wb'))
+# w = open in write mode, create if not existing
+# b = open in binary mode
+file_to_write = open("data/models/trained_model.sav", "wb")
+pickle.dump(model, file_to_write)
