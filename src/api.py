@@ -15,7 +15,7 @@
 #  http://127.0.0.1:5000/training_data
 #  -> prints content of training_data in browser
 #
-#  http://127.0.0.1:5000/predict?zylinder=6&ps=133&gewicht=3410&beschleunigung=15.8
+#  http://127.0.0.1:5000/predict?zylinder=6&ps=133&gewicht=3410&beschleunigung=15.8&baujahr=71
 #  -> predict a price based on the trained model
 
 
@@ -71,5 +71,5 @@ def model_predict():
     prediction = trained_model.predict([prediction_data])
     # JSON Response
     return {
-        "return": prediction[0]
+        "result": prediction[0]
     }
